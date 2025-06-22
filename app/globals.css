@@ -1,0 +1,450 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;700&display=swap');
+
+
+root {
+  --background: #f0f0f0;
+  --foreground: #333333;
+  --card: oklch(0.9702 0 0);
+  --card-foreground: oklch(0.3211 0 0);
+  --popover: oklch(0.9702 0 0);
+  --popover-foreground: oklch(0.3211 0 0);
+  --primary: oklch(0.4891 0 0);
+  --primary-foreground: oklch(1.0000 0 0);
+  --secondary: oklch(0.9067 0 0);
+  --secondary-foreground: oklch(0.3211 0 0);
+  --muted: oklch(0.8853 0 0);
+  --muted-foreground: oklch(0.5103 0 0);
+  --accent: oklch(0.8078 0 0);
+  --accent-foreground: oklch(0.3211 0 0);
+  --destructive: oklch(0.5594 0.1900 25.8625);
+  --destructive-foreground: oklch(1.0000 0 0);
+  --border: oklch(0.8576 0 0);
+  --input: oklch(0.9067 0 0);
+  --ring: oklch(0.4891 0 0);
+  --chart-1: oklch(0.4891 0 0);
+  --chart-2: oklch(0.4863 0.0361 196.0278);
+  --chart-3: oklch(0.6534 0 0);
+  --chart-4: oklch(0.7316 0 0);
+  --chart-5: oklch(0.8078 0 0);
+  --sidebar: oklch(0.9370 0 0);
+  --sidebar-foreground: oklch(0.3211 0 0);
+  --sidebar-primary: oklch(0.4891 0 0);
+  --sidebar-primary-foreground: oklch(1.0000 0 0);
+  --sidebar-accent: oklch(0.8078 0 0);
+  --sidebar-accent-foreground: oklch(0.3211 0 0);
+  --sidebar-border: oklch(0.8576 0 0);
+  --sidebar-ring: oklch(0.4891 0 0);
+  --font-sans: Montserrat, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Fira Code, monospace;
+  --radius: 0.35rem;
+  --shadow-2xs: 0px 2px 0px 0px hsl(0 0% 20% / 0.07);
+  --shadow-xs: 0px 2px 0px 0px hsl(0 0% 20% / 0.07);
+  --shadow-sm: 0px 2px 0px 0px hsl(0 0% 20% / 0.15), 0px 1px 2px -1px hsl(0 0% 20% / 0.15);
+  --shadow: 0px 2px 0px 0px hsl(0 0% 20% / 0.15), 0px 1px 2px -1px hsl(0 0% 20% / 0.15);
+  --shadow-md: 0px 2px 0px 0px hsl(0 0% 20% / 0.15), 0px 2px 4px -1px hsl(0 0% 20% / 0.15);
+  --shadow-lg: 0px 2px 0px 0px hsl(0 0% 20% / 0.15), 0px 4px 6px -1px hsl(0 0% 20% / 0.15);
+  --shadow-xl: 0px 2px 0px 0px hsl(0 0% 20% / 0.15), 0px 8px 10px -1px hsl(0 0% 20% / 0.15);
+  --shadow-2xl: 0px 2px 0px 0px hsl(0 0% 20% / 0.38);
+  
+  /* Legacy variables for backward compatibility */
+  --bg: var(--background);
+  --text: var(--foreground);
+  --danger: var(--destructive);
+  --button-glow: 0 0 5px var(--primary), 0 0 15px var(--primary), 0 0 30px var(--primary);
+}
+
+
+* {
+  margin: 5;
+  padding: 5;
+  box-sizing: border-box;
+}
+@media screen {
+  
+}
+
+body {
+  @apply bg-[var(--bg)] text-[var(--text)] scroll-smooth;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* 🎯 Selection styling */
+::selection {
+  background: var(--primary);
+  color: var(--bg);
+}
+
+/* 💡 Enhanced Glowing Button */
+.btn-glow {
+  @apply px-8 py-4 rounded-full font-bold text-white bg-[var(--primary)] hover:scale-105 transition-all duration-300 shadow-lg relative overflow-hidden cursor-pointer border-none;
+  box-shadow: var(--button-glow);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  background: linear-gradient(135deg, var(--primary) 0%, color-mix(in srgb, var(--primary) 80%, #000) 100%);
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary), 0 0 40px var(--primary);
+  transform: scale(1.05) translateY(-2px);
+}
+
+.btn-glow:active {
+  transform: scale(0.98) translateY(0);
+}
+
+/* 🧊 Enhanced Glass Button */
+.btn-glass {
+  @apply px-8 py-4 rounded-full border border-[var(--primary)] text-[var(--primary)] backdrop-blur-md bg-white/10 hover:bg-[var(--primary)] hover:text-black transition-all duration-300 cursor-pointer relative overflow-hidden;
+  box-shadow: var(--button-glow);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.btn-glass:hover {
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary), 0 0 40px var(--primary);
+}
+
+.btn-glass:active {
+  transform: scale(0.98) translateY(0);
+}
+
+/* 💻 Terminal styling */
+.terminal-line {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  color: var(--primary);
+  position: relative;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+/* 🌟 Text glow effects */
+.glow-text {
+  text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary), 0 0 30px var(--primary);
+}
+
+.text-primary {
+  color: var(--primary);
+  text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary);
+}
+
+/* 📱 Responsive improvements */
+@media (max-width: 640px) {
+
+  *{
+  margin: 5;
+  padding: 5
+
+  }
+
+  .btn-glow, .btn-glass {
+    @apply px-6 py-3 text-sm;
+  }
+}
+
+/* 🎭 Smooth animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: var(--button-glow);
+  }
+  50% {
+    box-shadow: 0 0 10px var(--primary), 0 0 25px var(--primary), 0 0 50px var(--primary);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* 🔮 Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--primary) 80%, #000);
+}
+
+/* 🌈 Focus styles for accessibility */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* ✨ Additional utility classes */
+.backdrop-blur-strong {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.text-shadow-glow {
+  text-shadow: 0 0 10px currentColor;
+}
+
+.border-glow {
+  box-shadow: 0 0 5px var(--primary), inset 0 0 5px var(--primary);
+}
+
+/* 📱 Additional responsive utilities */
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+
+/* Custom responsive breakpoints */
+@media (min-width: 475px) {
+  .xs\:inline {
+    display: inline;
+  }
+  
+  .xs\:hidden {
+    display: none;
+  }
+}
+
+/* Enhanced mobile optimizations */
+@media (max-width: 640px) {
+  .btn-glow, .btn-glass {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+  
+  /* Better touch targets */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+@media (max-width: 475px) {
+  .btn-glow, .btn-glass {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+  }
+  
+  /* Smaller text shadows on mobile */
+  .text-shadow-glow {
+    text-shadow: 0 0 5px currentColor;
+  }
+}
+
+/* Improve grid responsiveness */
+@media (max-width: 768px) {
+  .grid {
+    gap: 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .grid {
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    gap: 2rem;
+  }
+}
+
+/* Enhanced Responsive Layout Improvements */
+@media (max-width: 1024px) {
+  .max-w-7xl {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .text-4xl {
+    font-size: 2rem;
+  }
+  
+  .text-3xl {
+    font-size: 1.75rem;
+  }
+  
+  .text-2xl {
+    font-size: 1.5rem;
+  }
+  
+  .gap-12 {
+    gap: 2rem;
+  }
+  
+  .p-8 {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-cols-3, .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .text-5xl {
+    font-size: 2.5rem;
+  }
+  
+  .text-4xl {
+    font-size: 1.75rem;
+  }
+  
+  .gap-8 {
+    gap: 1rem;
+  }
+  
+  .p-6 {
+    padding: 1rem;
+  }
+  
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  
+  .justify-center {
+    justify-content: center;
+  }
+}
+
+/* Improved Container Spacing */
+.container-padding {
+  padding-left: max(1rem, env(safe-area-inset-left));
+  padding-right: max(1rem, env(safe-area-inset-right));
+}
+
+/* Better Mobile Navigation */
+@media (max-width: 640px) {
+  .nav-tabs {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .nav-tabs button {
+    width: calc(50% - 0.5rem);
+    margin: 0;
+  }
+}
+
+
+/* Enhanced Card Layouts */
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .card-content {
+    padding: 1rem;
+  }
+}
+
+/* Improved Text Readability */
+@media (max-width: 640px) {
+  .text-base {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+  
+  .leading-relaxed {
+    line-height: 1.5;
+  }
+}
+
+/* Better Button Spacing */
+@media (max-width: 640px) {
+  .button-group {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .button-group button {
+    width: 100%;
+  }
+}
+
+/* Improved Section Spacing */
+@media (max-width: 768px) {
+  section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+/* Better Image Handling */
+@media (max-width: 640px) {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Enhanced Form Elements */
+@media (max-width: 640px) {
+  input, textarea, select {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+  }
+}
+
+/* Improved Touch Targets */
+@media (max-width: 640px) {
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Better Modal Handling */
+@media (max-width: 640px) {
+  .modal-content {
+    width: 90%;
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
