@@ -380,7 +380,7 @@ const certifications = [
       </div>
 
       {/* Experience Section */}
-      <div id="experience" className="max-w-7xl mx-auto relative z-10 mb-24">
+      <div id="experience" className="max-w-7xl mx-auto relative z-10 mb-24 mt-16  md:mt-24 lg:mt-32 py-12">
         <div className="text-center mb-8 md:mb-16 ">
           <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold text-primary mb-4 md:mb-6 glow-text ">
             Experience
@@ -413,7 +413,7 @@ const certifications = [
       </div>
 
       {/* Projects Section */}
-      <div id="projects" className="max-w-7xl mx-auto relative z-10 mb-24">
+      <div id="projects" className="max-w-7xl mx-auto relative z-10 mb-24 mt-16 md:mt-24 lg:mt-32">
         <div className="text-center mb-8 md:mb-16 ">
           <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold text-primary mb-4 md:mb-6 glow-text ">
             Projects
@@ -469,7 +469,7 @@ const certifications = [
       </div>
 
       {/* Certifications Section */}
-      <div id="certifications" className="max-w-7xl mx-auto relative z-10 mb-24">
+      <div id="certifications" className="max-w-7xl mx-auto relative z-10 mb-24 mt-16 md:mt-24 lg:mt-32 py-12">
         <div className="text-center mb-8 md:mb-16 ">
           <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold text-primary mb-4 md:mb-6 glow-text ">
             Certifications
@@ -505,7 +505,7 @@ const certifications = [
       </div>
 
       {/* Skills Section */}
-      <div id="skills" className="max-w-7xl mx-auto relative z-10 mb-24">
+      <div id="skills" className="max-w-7xl mx-auto relative z-10 mb-24 mt-16 md:mt-24 lg:mt-32">
         <div className="text-center mb-8 md:mb-16 ">
           <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold text-primary mb-4 md:mb-6 glow-text ">
             Skills
@@ -554,7 +554,7 @@ const certifications = [
       <div className="absolute bottom-1/4 left-1/4 w-1.5 h-1.5 bg-primary rounded-full animate-pulse opacity-50"></div>
 
       {/* FAQ Section */}
-      <div id="faq" className="max-w-4xl mx-auto relative z-10 mb-24 mt-24 ">
+      <div id="faq" className="max-w-4xl mx-auto relative z-10 mb-24 mt-16 md:mt-24 lg:mt-32 py-12">
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4 md:mb-6 glow-text">
             FAQ
